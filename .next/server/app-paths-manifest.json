@@ -1,0 +1,5 @@
+{
+  "/(home)/page": "app/(home)/page.js",
+  "/[sportName]/page": "app/[sportName]/page.js",
+  "/api/ligas/route": "app/api/ligas/route.js"
+}

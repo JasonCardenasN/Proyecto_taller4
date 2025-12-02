@@ -1,0 +1,3 @@
+{
+  "/[sportName]/resultados/[matchId]/page": "app/[sportName]/resultados/[matchId]/page.js"
+}

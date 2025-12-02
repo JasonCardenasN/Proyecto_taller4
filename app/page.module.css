@@ -1,0 +1,916 @@
+.main {
+    max-width: 100%; 
+    margin: 0 auto;
+    background-color: var(--color-espn-dark); 
+}
+
+/* ------------------------------------- */
+/* 1. ESTILOS DE LA PÁGINA DE PORTADA (/) */
+/* ------------------------------------- */
+
+.visualHeader {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    position: relative;
+    overflow: hidden;
+    color: var(--color-espn-white);
+    
+    /* FONDO PRINCIPAL: portada.png */
+    background-image: url('/images/portada.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.visualHeader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1; 
+}
+
+.headerTitleContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+.headerTitle {
+    font-size: 4.5em; 
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.headerSubtitle {
+    font-size: 1.15em;
+    font-weight: 300;
+    color: var(--color-espn-light-gray);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* --- CONTENEDOR DE SELECTOR DE DEPORTE (3 COLUMNAS INTERACTIVAS) --- */
+.sportSelectorContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    height: 30vh; 
+    z-index: 5;
+    background-color: transparent; 
+}
+
+.sportSelectorItem {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* Ajuste para hitbox completo */
+    display: flex;
+    height: 100%; 
+    
+    justify-content: center;
+    align-items: center; 
+    padding: var(--spacing-lg);
+    border-right: 1px solid rgba(255, 255, 255, 0.2); 
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+.sportSelectorItem:last-child {
+    border-right: none;
+}
+
+.sportSelectorItem::before {
+    content: none;
+}
+
+/* EFECTO HOVER */
+.sportSelectorItem:hover {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+/* EFECTO ACTIVO */
+.activeSelector {
+    box-shadow: inset 0 -5px 0 var(--color-espn-red); 
+    filter: brightness(1.2); 
+}
+
+.sportButtonText {
+    position: relative;
+    z-index: 3; 
+    font-family: var(--font-body);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-espn-white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    background-color: transparent; 
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+/* --- MENSAJE DE BIENVENIDA (Solo aparece en la home si no hay state) --- */
+.dynamicContent {
+    padding: 0; 
+    min-height: 400px;
+}
+
+.welcomeMessage {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--color-espn-dark);
+    color: var(--color-espn-white);
+}
+
+.welcomeButton {
+    background-color: var(--color-espn-red);
+    color: var(--color-espn-white);
+    padding: 12px 30px;
+    margin-top: var(--spacing-lg);
+    display: inline-block;
+    border-radius: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+.welcomeButton:hover {
+    background-color: #ff3333;
+}
+
+
+/* ------------------------------------- */
+/* 2. ESTILOS DE LA PÁGINA DE DEPORTE ([sportName]/page.js) */
+/* ------------------------------------- */
+
+.whiteContentWrapper {
+    background-color: var(--color-espn-white); 
+    color: var(--color-espn-dark); 
+    min-height: 100vh;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.sportContentTitle {
+    color: var(--color-espn-dark);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2.5em;
+    padding-top: var(--spacing-md);
+}
+
+/* --- ENCABEZADO SUPERIOR (Barra de 3 columnas) --- */
+.secondaryHeader {
+    background-color: var(--color-espn-dark); 
+    color: var(--color-espn-white);
+    padding: var(--spacing-sm) var(--spacing-xl);
+    border-bottom: 1px solid var(--color-espn-gray);
+    
+    /* 💡 ESTRUCTURA DE 3 COLUMNAS */
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Izquierda | Centro | Derecha */
+    align-items: center;
+    text-align: center;
+}
+
+/* 💡 Título Central */
+.headerCentralTitle {
+    font-family: var(--font-heading);
+    font-size: 1.5em; 
+    color: var(--color-espn-white);
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2;
+    grid-column: 2 / 3; /* Columna central */
+}
+
+/* 💡 Etiqueta Derecha */
+.headerRightTag {
+    color: var(--color-espn-light-gray);
+    font-size: 0.8em;
+    text-transform: uppercase;
+    text-align: right; 
+    grid-column: 3 / 4; /* Columna derecha */
+}
+
+/* Ajuste del botón Volver */
+.backButton {
+    grid-column: 1 / 2; /* Columna izquierda */
+    text-align: left;
+    font-weight: bold;
+    color: var(--color-espn-light-gray);
+    transition: color 0.3s;
+}
+.backButton:hover {
+    color: var(--color-espn-red);
+}
+
+
+/* --- SUB-NAVEGACIÓN --- */
+.subNavContainer {
+    border-bottom: 2px solid var(--color-espn-red); 
+    background-color: var(--color-espn-white);
+    padding-top: var(--spacing-md);
+}
+
+.subNavHeader {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-xl) var(--spacing-md) var(--spacing-xl);
+    border-bottom: 1px solid var(--color-espn-light-gray);
+}
+
+.subNavIcon {
+    font-size: 2em; 
+    color: var(--color-espn-red);
+    margin-right: var(--spacing-sm);
+}
+
+.subNavSportName {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    color: var(--color-espn-dark);
+}
+
+.subNavLinks {
+    display: flex;
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-xl);
+    overflow-x: auto; 
+}
+
+/* 💡 CONTENEDOR DEL ÍTEM DE NAVEGACIÓN (Clave para el Dropdown) */
+.navItemWrapper {
+    position: relative; 
+    height: 100%; 
+    display: flex;
+    align-items: center;
+}
+
+.navItem {
+    color: var(--color-espn-dark);
+    font-weight: 500;
+    padding: var(--spacing-md) 0;
+    transition: color 0.3s;
+    white-space: nowrap; 
+    border-bottom: 3px solid transparent;
+    cursor: pointer; 
+}
+
+.navItem:hover {
+    color: var(--color-espn-red);
+}
+
+.activeNavItem {
+    color: var(--color-espn-red);
+    border-bottom: 3px solid var(--color-espn-red); 
+    font-weight: 700;
+}
+
+/* 💡 ESTILO DEL DROPDOWN MENU */
+.dropdownMenu {
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    background-color: var(--color-espn-white);
+    border: 1px solid var(--color-espn-light-gray);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 50; 
+    min-width: 250px;
+    padding: var(--spacing-sm) 0;
+    border-radius: 4px;
+    margin-top: 2px; 
+}
+
+.dropdownItem {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--color-espn-dark);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdownItem:hover {
+    background-color: var(--color-espn-red);
+    color: var(--color-espn-white);
+}
+
+/* ------------------------------------- */
+/* 3. ESTILOS DE LA PÁGINA DE EQUIPOS */
+/* ------------------------------------- */
+
+.teamsListContainer {
+    max-width: 1200px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-md);
+}
+
+/* 💡 ESTILO GRID */
+.teamsGrid {
+    display: grid;
+    /* 4 columnas en desktop */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: var(--spacing-xl); 
+    list-style: none;
+    padding: 0;
+}
+
+/* 💡 ESTILO DE LA TARJETA INDIVIDUAL */
+.teamCard {
+    background-color: var(--color-espn-white);
+    border: 1px solid var(--color-espn-light-gray);
+    border-top: 5px solid var(--color-espn-red); 
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.teamCard:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.teamLogoPlaceholder {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-espn-gray);
+    border-radius: 50%;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-espn-white);
+    font-size: 2em;
+}
+
+.teamName {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--color-espn-dark);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.teamDetail {
+    display: block;
+    color: var(--color-espn-gray);
+    font-size: 0.95em;
+    margin-top: 5px;
+}
+
+/* 💡 Estilos para la tarjeta de liga */
+.ligaCard {
+    background-color: var(--color-espn-white);
+    border: 1px solid var(--color-espn-light-gray);
+    border-top: 5px solid var(--color-uach-verde, #004d40); 
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ligaCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ligaButton {
+    display: inline-block;
+    background-color: var(--color-uach-verde, #004d40);
+    color: var(--color-espn-white);
+    padding: 8px 15px;
+    margin-top: var(--spacing-md);
+    border-radius: 3px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.ligaButton:hover {
+    background-color: var(--color-espn-red);
+}
+
+
+/* ------------------------------------- */
+/* 4. ESTILOS DE RESULTADOS (Calendario Semanal) */
+/* ------------------------------------- */
+
+.calendarContainer {
+    max-width: 1000px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-md);
+}
+
+.dayGroup {
+    margin-bottom: var(--spacing-xl);
+    border: 1px solid var(--color-espn-light-gray);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dayTitle {
+    background-color: var(--color-espn-red); 
+    color: var(--color-espn-white);
+    font-family: var(--font-heading);
+    font-size: 1.4em;
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.dailyMatchesList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 💡 ESTILO DE TARJETA DE PARTIDO EN FILA (Match Schedule Card) */
+.matchScheduleCard {
+    display: grid;
+    /* Define 4 columnas: Info (Hora/Lugar), Equipo 1, Equipo 2, Estado */
+    grid-template-columns: 1fr 2fr 2fr 1fr; 
+    gap: var(--spacing-md);
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-sm);
+    background-color: var(--color-espn-white);
+    border-bottom: 1px solid var(--color-espn-light-gray);
+    color: var(--color-espn-dark);
+}
+
+.matchScheduleCard:nth-child(even) {
+    background-color: var(--color-espn-light-gray); 
+}
+
+/* Estilo para el Link que envuelve la tarjeta */
+.matchCardLink {
+    display: block; 
+    text-decoration: none; 
+    color: inherit; 
+    transition: transform 0.2s;
+}
+
+.matchCardLink:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.scheduleInfo {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.scheduleTime {
+    font-weight: 700;
+    color: var(--color-espn-red);
+    margin-bottom: 3px;
+}
+.scheduleLocation {
+    color: var(--color-espn-gray);
+    font-size: 0.85em;
+}
+
+.scheduleTeams {
+    display: flex;
+    justify-content: space-between;
+    padding-right: var(--spacing-md);
+}
+
+.scheduleTeamName {
+    font-weight: 600;
+    color: var(--color-espn-dark);
+}
+
+.scheduleScore {
+    font-size: 1.2em;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-espn-red); 
+}
+
+.scheduleStatus {
+    text-align: right;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: var(--color-espn-gray);
+}
+
+
+/* ------------------------------------- */
+/* 5. ESTILOS DE DETALLE DE PARTIDO */
+/* ------------------------------------- */
+
+.matchDetailSection {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--color-espn-white);
+    color: var(--color-espn-dark);
+}
+
+.matchDetailCard {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid var(--color-espn-light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-top: 5px solid var(--color-espn-red);
+    text-align: center;
+}
+
+.matchDetailHeader {
+    background-color: var(--color-espn-dark); 
+    color: var(--color-espn-white);
+    padding: var(--spacing-md) var(--spacing-xl);
+    text-align: center;
+    font-family: var(--font-body);
+}
+
+.matchDate {
+    font-size: 0.9em;
+    color: var(--color-espn-light-gray);
+    margin-bottom: 5px;
+}
+
+.matchStatusBig {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--color-espn-red);
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-md);
+}
+
+.matchScoreboard {
+    /* 💡 FONDO BLANCO y texto oscuro */
+    background-color: var(--color-espn-white); 
+    color: var(--color-espn-dark); 
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr; /* Team A | VS | Team B */
+    gap: var(--spacing-md);
+    align-items: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    border-bottom: 2px solid var(--color-espn-red);
+}
+
+.detailTeamBlock {
+    text-align: right;
+    padding-right: var(--spacing-md);
+}
+.detailTeamBlock:last-child {
+    text-align: left;
+    padding-left: var(--spacing-md);
+    padding-right: 0;
+}
+
+.detailTeamName {
+    font-family: var(--font-heading);
+    font-size: 2em;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-sm);
+    /* 💡 COLOR NEGRO CONFIRMADO */
+    color: var(--color-espn-dark); 
+}
+
+.detailScore {
+    font-family: var(--font-heading);
+    font-size: 4.5em; 
+    color: var(--color-espn-red);
+    line-height: 1;
+}
+
+.detailVs {
+    font-family: var(--font-heading);
+    font-size: 2em;
+    color: var(--color-espn-gray);
+}
+
+.detailInfoBar {
+    background-color: var(--color-espn-gray);
+    padding: var(--spacing-md);
+    border-radius: 0 0 8px 8px; 
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.9em;
+    color: var(--color-espn-light-gray);
+}
+.detailInfoItem {
+    font-weight: 500;
+}
+.detailInfoItem span {
+    color: var(--color-espn-white);
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+
+/* --- SECCIÓN DE COMENTARIOS --- */
+.commentsSection {
+    background-color: var(--color-espn-light-gray);
+    padding: var(--spacing-xl) 40px;
+    border-top: 1px solid var(--color-espn-gray);
+    color: var(--color-espn-dark);
+}
+
+.commentsContainer {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.commentTitle {
+    font-size: 1.8em;
+    color: var(--color-espn-dark);
+    margin-bottom: var(--spacing-lg);
+}
+
+.commentInputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.commentTextArea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid var(--color-espn-gray);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1em;
+    resize: vertical;
+}
+
+.commentButton {
+    /* Estilo botón ESPN */
+    background-color: var(--color-espn-red);
+    color: var(--color-espn-white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    align-self: flex-start; 
+}
+
+.commentButton:hover {
+    background-color: #ff3333;
+}
+
+.commentList {
+    list-style: none;
+    padding: 0;
+}
+
+.commentItem {
+    background-color: var(--color-espn-white);
+    padding: var(--spacing-md);
+    border-radius: 4px;
+    margin-bottom: var(--spacing-sm);
+    border-left: 3px solid var(--color-espn-red);
+}
+.commentAuthor {
+    font-weight: 700;
+    margin-right: var(--spacing-sm);
+    font-size: 0.9em;
+    color: var(--color-espn-dark);
+}
+.commentTime {
+    font-size: 0.8em;
+    color: var(--color-espn-gray);
+}
+.commentText {
+    margin-top: 5px;
+}
+
+
+/* --- SECCIÓN DE DETALLES DEL DEPORTE (Plantilla y Colores) --- */
+
+.sportSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    min-height: 300px; 
+    color: var(--color-espn-white);
+    border-bottom: 1px solid var(--color-espn-gray); 
+}
+
+.sportSectionWhite {
+    background-color: var(--color-espn-light-gray); 
+    color: var(--color-espn-dark); 
+    padding: 40px 20px;
+    border-bottom: none; 
+}
+
+.sportDetails {
+    padding: var(--spacing-xl) 40px;
+    background-color: var(--color-espn-white);
+    color: var(--color-espn-dark);
+    min-height: 400px;
+}
+
+.sportDetails h3 {
+    color: var(--color-espn-dark);
+    text-transform: none;
+    font-family: var(--font-body);
+}
+
+/* --- ESTILOS DE FONDO POR DEPORTE --- */
+.sportFutbol { background-color: var(--color-sport-futbol); }
+.sportVoleibol { background-color: var(--color-sport-voleibol); }
+.sportBasquetbol { background-color: var(--color-sport-basquetbol); }
+
+
+/* --- ELEMENTOS DE LA SECCIÓN (IMAGEN, BOTONES, PUNTOS) --- */
+.courtContainer {
+    flex-grow: 1; 
+    text-align: center;
+    padding: 0 var(--spacing-xl); 
+}
+
+.courtImage {
+    max-width: 100%; 
+    height: auto;  
+    display: block; 
+    margin: 0 auto var(--spacing-lg) auto; 
+    border-radius: 5px; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--color-espn-red); 
+}
+
+.matchesButton {
+    padding: 15px 40px;
+    border-radius: 5px;
+    color: var(--color-espn-white);
+    font-weight: 700;
+    font-family: var(--font-heading);
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: var(--color-espn-red); 
+}
+
+.matchesButton:hover {
+    background-color: var(--color-espn-white);
+    color: var(--color-espn-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.pointsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.point {
+    width: 25px; 
+    height: 25px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.2); 
+    border: 2px solid var(--color-espn-white);
+}
+
+/* Estilos de puntos en la sección blanca */
+.sportSectionWhite .point {
+    background-color: var(--color-espn-gray);
+    border-color: var(--color-espn-dark);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sportFutbol .point { background-color: #3cb371; } 
+.sportVoleibol .point { background-color: #4682b4; } 
+.sportBasquetbol .point { background-color: #ff8c00; } 
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .visualHeader { min-height: 80vh; }
+    .headerTitle { font-size: 3em; }
+    .sportSelectorContainer { height: 20vh; }
+    .sportSelectorItem { padding: var(--spacing-md); }
+    .sportButtonText { font-size: 1.1em; }
+    .sportSection { padding: 40px 15px; }
+    .sportSectionWhite { padding: 40px 15px; }
+    
+    .sportSection, .sportSectionWhite { flex-direction: column; gap: var(--spacing-lg); }
+    .pointsContainer { flex-direction: row; gap: var(--spacing-sm); padding: var(--spacing-md) 0; }
+    .courtContainer { order: 2; padding: var(--spacing-md) 0; }
+
+    .dropdownMenu {
+        left: 0;
+        transform: translateX(0);
+    }
+    
+    /* Responsive del Grid */
+    .teamsGrid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+        gap: var(--spacing-md);
+    }
+    .teamCard {
+        padding: var(--spacing-md);
+    }
+    .teamLogoPlaceholder {
+        width: 60px;
+        height: 60px;
+    }
+    .sportContentTitle {
+        font-size: 2em;
+    }
+
+    /* Responsive del Calendario */
+    .matchScheduleCard {
+        /* En móvil, cambiamos a 2 columnas principales */
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: auto auto;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+    }
+    
+    .scheduleInfo {
+        /* La información se mueve a la primera fila */
+        grid-column: 1 / 3;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px dashed var(--color-espn-light-gray);
+        padding-bottom: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .scheduleTeams {
+        padding-right: 0;
+    }
+
+    .scheduleStatus {
+        grid-column: 2;
+        text-align: right;
+        font-size: 0.9em;
+        align-self: center;
+    }
+    
+    /* Responsive del Detalle de Partido */
+    .matchScoreboard {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    .detailTeamName {
+        font-size: 1.5em;
+    }
+    .detailTeamBlock {
+        text-align: center !important;
+        padding: 0 !important;
+    }
+    .detailScore {
+        font-size: 3em;
+    }
+}
+@media (max-width: 480px) {
+    .visualHeader { min-height: 60vh; }
+    .headerTitle { font-size: 2.5em; }
+    .sportSelectorContainer {
+        height: 15vh;
+        flex-direction: column; 
+    }
+    .sportSelectorItem {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        height: 100%;
+        align-items: center;
+    }
+    .sportButtonText {
+        background-color: transparent;
+        font-size: 1.2em;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    }
+    .teamsGrid {
+        grid-template-columns: 1fr; 
+        gap: var(--spacing-md);
+    }
+    .matchInfoGrid {
+        grid-template-columns: 1fr;
+    }
+}

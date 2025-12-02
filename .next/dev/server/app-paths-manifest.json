@@ -1,0 +1,9 @@
+{
+  "/(home)/page": "app/(home)/page.js",
+  "/[sportName]/equipos/page": "app/[sportName]/equipos/page.js",
+  "/[sportName]/ligas/page": "app/[sportName]/ligas/page.js",
+  "/[sportName]/page": "app/[sportName]/page.js",
+  "/[sportName]/resultados/[matchId]/page": "app/[sportName]/resultados/[matchId]/page.js",
+  "/[sportName]/resultados/page": "app/[sportName]/resultados/page.js",
+  "/api/ligas/route": "app/api/ligas/route.js"
+}

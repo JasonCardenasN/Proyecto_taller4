@@ -1,0 +1,10 @@
+var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/api/ligas/route.js")
+R.c("server/chunks/[root-of-the-server]__b2b17742._.js")
+R.c("server/chunks/e8dd7_next_7d037057._.js")
+R.c("server/chunks/7b30d_es-toolkit_dist_143dcf06._.js")
+R.c("server/chunks/b88cf_google-auth-library_2ac93c29._.js")
+R.c("server/chunks/node_modules__pnpm_40b63e75._.js")
+R.c("server/chunks/[root-of-the-server]__696c4264._.js")
+R.c("server/chunks/_next-internal_server_app_api_ligas_route_actions_2314cc51.js")
+R.m("[project]/node_modules/.pnpm/next@16.0.6_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/app/api/ligas/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/node_modules/.pnpm/next@16.0.6_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/app/api/ligas/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports

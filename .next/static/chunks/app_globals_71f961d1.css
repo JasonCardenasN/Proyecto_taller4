@@ -1,0 +1,58 @@
+/* [project]/app/globals.css [app-client] (css) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-espn-red: #c00;
+  --color-espn-dark: #1a1a1a;
+  --color-espn-gray: #333;
+  --color-espn-light-gray: #f0f0f0;
+  --color-espn-white: #fff;
+  --font-heading: "Oswald", "Arial Black", Arial, sans-serif;
+  --font-body: "Roboto", Arial, sans-serif;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --color-sport-futbol: #405735;
+  --color-sport-voleibol: #369;
+  --color-sport-basquetbol: #965b32;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-espn-dark);
+  color: var(--color-espn-white);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-espn-white);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-espn-red);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+a:hover {
+  color: var(--color-espn-white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-espn-red);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/*# sourceMappingURL=app_globals_71f961d1.css.map*/
