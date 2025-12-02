@@ -24,7 +24,7 @@ const sportAppearanceData = {
     },
 };
 
-// Función para obtener datos de tu API
+// Función para obtener datos de la API
 async function getLigasData() {
     const baseUrl = process.env.NODE_ENV === 'production' 
                     ? 'https://tu-dominio.com' 

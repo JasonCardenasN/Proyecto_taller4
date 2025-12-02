@@ -9,7 +9,6 @@ const sportAppearanceData = {
     'basquetbol': { display: "Básquetbol", deporte: "basquetbol"},
 };
 
-// Reusing general sheet fetch
 async function getSheetData(sheetIndex) {
     const baseUrl = process.env.NODE_ENV === 'production' 
                     ? 'https://tu-dominio.com' 
@@ -50,7 +49,7 @@ async function getFullMatchData() {
         
         // Unir nombres
         const matchesWithNames = partidosData.map(match => {
-            const id = match.id?.toString();  // ESTO ES LO QUE USA /[matchId]/
+            const id = match.id?.toString();  
             return {
                 ...match,
                 equipo1_nombre:
@@ -63,7 +62,7 @@ async function getFullMatchData() {
                     match.equipo2 ||
                     'Visitante Desconocido',
 
-                matchId: id   // Normalizamos ID
+                matchId: id   
             };
         });
 
@@ -104,7 +103,6 @@ export default async function MatchDetailPage(props) {
     // Buscar el partido por ID
     const match = allMatches.find(m => m.matchId === matchId);
 
-    // --- MANEJO DE ERROR ---
     if (!match) {
         return (
             <main className={styles.main}>
@@ -120,7 +118,6 @@ export default async function MatchDetailPage(props) {
             </main>
         );
     }
-    // --- FIN ERROR ---
 
     const matchStatus =
         match.score_equipo1 || match.score_equipo2

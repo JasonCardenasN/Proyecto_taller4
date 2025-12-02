@@ -164,7 +164,7 @@ const sportAppearanceData = {
         deporte: "basquetbol"
     }
 };
-// Función para obtener datos de tu API de Google Sheets (Hoja 0: Equipos)
+// Función para obtener datos de la API 
 async function getLigasData() {
     const baseUrl = ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : 'http://localhost:3000';
     const res = await fetch(`${baseUrl}/api/ligas?sheetIndex=0`, {

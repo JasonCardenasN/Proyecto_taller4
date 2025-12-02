@@ -176,7 +176,6 @@ async function getLigasData() {
     return res.json();
 }
 async function EquiposPage({ params }) {
-    // >>> FIX OBLIGATORIO EN NEXT 15/16
     const { sportName: sportId } = await params;
     const appearanceData = sportAppearanceData[sportId];
     if (!appearanceData) {
@@ -189,25 +188,25 @@ async function EquiposPage({ params }) {
                         children: "Error 404"
                     }, void 0, false, {
                         fileName: "[project]/app/[sportName]/equipos/page.js",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: "Deporte no encontrado."
                     }, void 0, false, {
                         fileName: "[project]/app/[sportName]/equipos/page.js",
-                        lineNumber: 41,
+                        lineNumber: 40,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/[sportName]/equipos/page.js",
-                lineNumber: 39,
+                lineNumber: 38,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/[sportName]/equipos/page.js",
-            lineNumber: 38,
+            lineNumber: 37,
             columnNumber: 13
         }, this);
     }
@@ -236,7 +235,7 @@ async function EquiposPage({ params }) {
                             children: "← Inicio"
                         }, void 0, false, {
                             fileName: "[project]/app/[sportName]/equipos/page.js",
-                            lineNumber: 65,
+                            lineNumber: 64,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -244,7 +243,7 @@ async function EquiposPage({ params }) {
                             children: "Ligas Recreativas UACh"
                         }, void 0, false, {
                             fileName: "[project]/app/[sportName]/equipos/page.js",
-                            lineNumber: 66,
+                            lineNumber: 65,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -252,13 +251,13 @@ async function EquiposPage({ params }) {
                             children: "INFO104"
                         }, void 0, false, {
                             fileName: "[project]/app/[sportName]/equipos/page.js",
-                            lineNumber: 67,
+                            lineNumber: 66,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/[sportName]/equipos/page.js",
-                    lineNumber: 64,
+                    lineNumber: 63,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SportSubNav$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -266,7 +265,7 @@ async function EquiposPage({ params }) {
                     sportDisplayName: appearanceData.display
                 }, void 0, false, {
                     fileName: "[project]/app/[sportName]/equipos/page.js",
-                    lineNumber: 70,
+                    lineNumber: 69,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -280,7 +279,7 @@ async function EquiposPage({ params }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/[sportName]/equipos/page.js",
-                            lineNumber: 76,
+                            lineNumber: 75,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -295,7 +294,7 @@ async function EquiposPage({ params }) {
                                                 children: appearanceData.display[0]
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[sportName]/equipos/page.js",
-                                                lineNumber: 86,
+                                                lineNumber: 85,
                                                 columnNumber: 41
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -303,7 +302,7 @@ async function EquiposPage({ params }) {
                                                 children: item.Equipos || item.Nombre_Equipo || 'Equipo Desconocido'
                                             }, void 0, false, {
                                                 fileName: "[project]/app/[sportName]/equipos/page.js",
-                                                lineNumber: 90,
+                                                lineNumber: 89,
                                                 columnNumber: 41
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -314,18 +313,18 @@ async function EquiposPage({ params }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/[sportName]/equipos/page.js",
-                                                lineNumber: 94,
+                                                lineNumber: 93,
                                                 columnNumber: 41
                                             }, this)
                                         ]
                                     }, index, true, {
                                         fileName: "[project]/app/[sportName]/equipos/page.js",
-                                        lineNumber: 84,
+                                        lineNumber: 83,
                                         columnNumber: 37
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/[sportName]/equipos/page.js",
-                                lineNumber: 82,
+                                lineNumber: 81,
                                 columnNumber: 29
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 style: {
@@ -340,29 +339,29 @@ async function EquiposPage({ params }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[sportName]/equipos/page.js",
-                                lineNumber: 101,
+                                lineNumber: 100,
                                 columnNumber: 29
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/[sportName]/equipos/page.js",
-                            lineNumber: 80,
+                            lineNumber: 79,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/[sportName]/equipos/page.js",
-                    lineNumber: 75,
+                    lineNumber: 74,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/[sportName]/equipos/page.js",
-            lineNumber: 62,
+            lineNumber: 61,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/[sportName]/equipos/page.js",
-        lineNumber: 61,
+        lineNumber: 60,
         columnNumber: 9
     }, this);
 }

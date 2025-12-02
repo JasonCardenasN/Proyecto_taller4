@@ -28,7 +28,6 @@ async function getLigasData() {
 
 export default async function EquiposPage({ params }) {
 
-    // >>> FIX OBLIGATORIO EN NEXT 15/16
     const { sportName: sportId } = await params;
 
     const appearanceData = sportAppearanceData[sportId];

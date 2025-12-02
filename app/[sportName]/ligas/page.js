@@ -9,7 +9,7 @@ const sportAppearanceData = {
     'basquetbol': { display: "Básquetbol", deporte: "basquetbol"},
 };
 
-// Función para obtener datos de tu API de Google Sheets (Hoja 0: Equipos)
+// Función para obtener datos de la API 
 async function getLigasData() {
     const baseUrl = process.env.NODE_ENV === 'production' 
                     ? 'https://tu-dominio.com' 
