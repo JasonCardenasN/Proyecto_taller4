@@ -168,7 +168,10 @@ const sportAppearanceData = {
 // API BASE
 // ------------------------------------------------------------------
 async function getSheetData(sheetIndex) {
+    // 💡 CORRECCIÓN VERCEL: Usamos VERCEL_URL si estamos en producción
+    const host = process.env.VERCEL_URL;
     const baseUrl = ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : 'http://localhost:3000';
+    // Llamamos a la API con sheetIndex
     const res = await fetch(`${baseUrl}/api/ligas?sheetIndex=${sheetIndex}`, {
         cache: 'no-store'
     });
@@ -235,25 +238,25 @@ async function ResultadosPage({ params }) {
                         children: "Error 404"
                     }, void 0, false, {
                         fileName: "[project]/app/[sportName]/resultados/page.js",
-                        lineNumber: 103,
+                        lineNumber: 107,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         children: "Deporte no encontrado."
                     }, void 0, false, {
                         fileName: "[project]/app/[sportName]/resultados/page.js",
-                        lineNumber: 104,
+                        lineNumber: 108,
                         columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/[sportName]/resultados/page.js",
-                lineNumber: 102,
+                lineNumber: 106,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/[sportName]/resultados/page.js",
-            lineNumber: 101,
+            lineNumber: 105,
             columnNumber: 13
         }, this);
     }
@@ -281,7 +284,7 @@ async function ResultadosPage({ params }) {
                             children: "← Inicio"
                         }, void 0, false, {
                             fileName: "[project]/app/[sportName]/resultados/page.js",
-                            lineNumber: 128,
+                            lineNumber: 132,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -289,7 +292,7 @@ async function ResultadosPage({ params }) {
                             children: "Ligas Recreativas UACh"
                         }, void 0, false, {
                             fileName: "[project]/app/[sportName]/resultados/page.js",
-                            lineNumber: 129,
+                            lineNumber: 133,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -297,13 +300,13 @@ async function ResultadosPage({ params }) {
                             children: "INFO104"
                         }, void 0, false, {
                             fileName: "[project]/app/[sportName]/resultados/page.js",
-                            lineNumber: 130,
+                            lineNumber: 134,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/[sportName]/resultados/page.js",
-                    lineNumber: 127,
+                    lineNumber: 131,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SportSubNav$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -311,7 +314,7 @@ async function ResultadosPage({ params }) {
                     sportDisplayName: appearanceData.display
                 }, void 0, false, {
                     fileName: "[project]/app/[sportName]/resultados/page.js",
-                    lineNumber: 134,
+                    lineNumber: 138,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -325,7 +328,7 @@ async function ResultadosPage({ params }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/[sportName]/resultados/page.js",
-                            lineNumber: 141,
+                            lineNumber: 145,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -338,7 +341,7 @@ async function ResultadosPage({ params }) {
                                             children: date
                                         }, void 0, false, {
                                             fileName: "[project]/app/[sportName]/resultados/page.js",
-                                            lineNumber: 150,
+                                            lineNumber: 154,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -357,7 +360,7 @@ async function ResultadosPage({ params }) {
                                                                         children: match.fecha?.split(' ')[1] || 'TBD'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                                        lineNumber: 164,
+                                                                        lineNumber: 168,
                                                                         columnNumber: 57
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -365,13 +368,13 @@ async function ResultadosPage({ params }) {
                                                                         children: match.lugar || 'Cancha Central'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                                        lineNumber: 167,
+                                                                        lineNumber: 171,
                                                                         columnNumber: 57
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                                lineNumber: 163,
+                                                                lineNumber: 167,
                                                                 columnNumber: 53
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -382,7 +385,7 @@ async function ResultadosPage({ params }) {
                                                                         children: match.equipo1_nombre
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                                        lineNumber: 174,
+                                                                        lineNumber: 178,
                                                                         columnNumber: 57
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -390,13 +393,13 @@ async function ResultadosPage({ params }) {
                                                                         children: match.score_equipo1 || '-'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                                        lineNumber: 177,
+                                                                        lineNumber: 181,
                                                                         columnNumber: 57
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                                lineNumber: 173,
+                                                                lineNumber: 177,
                                                                 columnNumber: 53
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -407,7 +410,7 @@ async function ResultadosPage({ params }) {
                                                                         children: match.equipo2_nombre
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                                        lineNumber: 183,
+                                                                        lineNumber: 187,
                                                                         columnNumber: 57
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -415,13 +418,13 @@ async function ResultadosPage({ params }) {
                                                                         children: match.score_equipo2 || '-'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                                        lineNumber: 186,
+                                                                        lineNumber: 190,
                                                                         columnNumber: 57
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                                lineNumber: 182,
+                                                                lineNumber: 186,
                                                                 columnNumber: 53
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -429,29 +432,29 @@ async function ResultadosPage({ params }) {
                                                                 children: match.score_equipo1 || match.score_equipo2 ? 'Finalizado' : 'Pendiente'
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                                lineNumber: 191,
+                                                                lineNumber: 195,
                                                                 columnNumber: 53
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                        lineNumber: 160,
+                                                        lineNumber: 164,
                                                         columnNumber: 49
                                                     }, this)
                                                 }, match.id || index, false, {
                                                     fileName: "[project]/app/[sportName]/resultados/page.js",
-                                                    lineNumber: 155,
+                                                    lineNumber: 159,
                                                     columnNumber: 45
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/app/[sportName]/resultados/page.js",
-                                            lineNumber: 152,
+                                            lineNumber: 156,
                                             columnNumber: 37
                                         }, this)
                                     ]
                                 }, date, true, {
                                     fileName: "[project]/app/[sportName]/resultados/page.js",
-                                    lineNumber: 148,
+                                    lineNumber: 152,
                                     columnNumber: 33
                                 }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$6_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 style: {
@@ -466,29 +469,29 @@ async function ResultadosPage({ params }) {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/[sportName]/resultados/page.js",
-                                lineNumber: 201,
+                                lineNumber: 205,
                                 columnNumber: 29
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/[sportName]/resultados/page.js",
-                            lineNumber: 145,
+                            lineNumber: 149,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/[sportName]/resultados/page.js",
-                    lineNumber: 140,
+                    lineNumber: 144,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/[sportName]/resultados/page.js",
-            lineNumber: 124,
+            lineNumber: 128,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/[sportName]/resultados/page.js",
-        lineNumber: 123,
+        lineNumber: 127,
         columnNumber: 9
     }, this);
 }
