@@ -14,17 +14,13 @@ const sportAppearanceData = {
 // ------------------------------------------------------------------
 
 async function getSheetData(sheetIndex) {
-    // 💡 CORRECCIÓN VERCEL: Usamos VERCEL_URL si estamos en producción
-    const host = process.env.VERCEL_URL;
-    
     const baseUrl = process.env.NODE_ENV === 'production' 
-                    ? `https://${host}` 
+                    ? 'https://proyecto-taller4.vercel.app/' 
                     : 'http://localhost:3000'; 
                     
-    // Llamamos a la API con sheetIndex
     const res = await fetch(`${baseUrl}/api/ligas?sheetIndex=${sheetIndex}`, { 
         cache: 'no-store' 
-    });
+    }); 
 
     if (!res.ok) {
         throw new Error(`Fallo al obtener datos de la hoja con índice ${sheetIndex}.`);

@@ -12,7 +12,7 @@ const sportAppearanceData = {
 // Función para obtener datos
 async function getLigasData() {
     const baseUrl = process.env.NODE_ENV === 'production' 
-                    ? 'https://tu-dominio.com' 
+                    ? 'https://proyecto-taller4.vercel.app/' 
                     : 'http://localhost:3000'; 
                     
     const res = await fetch(`${baseUrl}/api/ligas`, { 

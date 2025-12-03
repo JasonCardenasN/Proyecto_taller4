@@ -1,5 +1,3 @@
-[00:00:01.355] Server  LOG      ✓ Ready in 869ms
-[00:00:11.359] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:12.645] Server  ERROR   C:\Users\Yughi\Desktop\Proyecto_taller4\.next\dev\server\chunks\ssr\[root-of-the-server]__c3143a95._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
-[00:00:12.647] Server  ERROR   Error al obtener datos de API: ReferenceError: getLigasData is not defined
-[00:00:46.582] Server  LOG      ✓ Compiled in 7ms
+[00:00:01.086] Server  LOG      ✓ Ready in 715ms
+[00:00:02.921] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.508] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
